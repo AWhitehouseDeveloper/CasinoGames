@@ -7,6 +7,11 @@ public class Player : MonoBehaviour
     public string Money = "Infinite";
     public long ChipMoney;
 
+    public void Payout(long pay)
+    {
+        ChipMoney += pay;
+    }
+
     public void OnWithdraw()
     {
         ChipMoney += 10000;

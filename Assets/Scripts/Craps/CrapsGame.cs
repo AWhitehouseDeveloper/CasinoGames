@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CrapsGame : MonoBehaviour
 {
@@ -26,12 +27,15 @@ public class CrapsGame : MonoBehaviour
     /// Any single roll bet is always affected (win or lose) by the outcome of any roll.
     /// 
     /// </summary>
+    public GameObject PointIndicator;
+    public Sprite IndicatorOn;
+    public Sprite IndicatorOff;
     private bool FirstRoll = true;
     private bool EndofRound = false;
-    private int totalBet;
+    private int TotalBet;
     private int point = 0;
     private bool PassWin;
-
+    #region MainGameFunction(OnRoll, FlipIndicator, and EndRound)
     public void OnRoll()
     {
         int die1 = Utilities.RollDie();
@@ -54,7 +58,7 @@ public class CrapsGame : MonoBehaviour
             {
                 FirstRoll = false;
                 point = roll;
-                
+                FlipIndicator(point);
             }
         }
         else
@@ -70,7 +74,7 @@ public class CrapsGame : MonoBehaviour
                 EndofRound = true;
             }
         }
-
+        Debug.Log(roll);
         if(EndofRound)
         {
             EndRound();
@@ -79,9 +83,26 @@ public class CrapsGame : MonoBehaviour
 
     public void FlipIndicator(int num)
     {
-        if(num == -1)
+        if (num == -1)
         {
-
+            PointIndicator.transform.position = new Vector2(230, -55);
+            PointIndicator.GetComponent<Image>().sprite = IndicatorOff;
+        }
+        else
+        {
+            PointIndicator.GetComponent<Image>().sprite = IndicatorOn;
+            if(num == 4)
+                PointIndicator.transform.position = new Vector2(280, -175);
+            else if(num == 5)                    
+                PointIndicator.transform.position = new Vector2(290, -110);
+            else if(num == 6)                    
+                PointIndicator.transform.position = new Vector2(365, -110);
+            else if(num == 8)                    
+                PointIndicator.transform.position = new Vector2(440, -110);
+            else if(num == 9)                    
+                PointIndicator.transform.position = new Vector2(515, -110);
+            else if(num == 10)                   
+                PointIndicator.transform.position = new Vector2(590, -110);
         }
     }
 
@@ -89,6 +110,8 @@ public class CrapsGame : MonoBehaviour
     {
         FirstRoll = true;
         EndofRound = false;
+        FlipIndicator(-1);
         point = 0;
     }
+    #endregion
 }
