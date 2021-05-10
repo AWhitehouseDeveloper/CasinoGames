@@ -25,6 +25,7 @@ public class PokerGame : MonoBehaviour
     winCondition payout = winCondition.None;    //multiplier for the payout based on win condition.
     Card[] hand = new Card[5];                  //players hand
 
+
     void Start()
     {
         int index = 0;
