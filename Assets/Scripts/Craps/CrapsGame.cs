@@ -32,7 +32,6 @@ public class CrapsGame : MonoBehaviour
     public Sprite IndicatorOff;
     private bool FirstRoll = true;
     private bool EndofRound = false;
-    private int TotalBet;
     private int point = 0;
     private bool PassWin;
     #region MainGameFunction(OnRoll, FlipIndicator, and EndRound)
