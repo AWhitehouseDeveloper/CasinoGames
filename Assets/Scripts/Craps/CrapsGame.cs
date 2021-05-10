@@ -48,11 +48,13 @@ public class CrapsGame : MonoBehaviour
             {
                 PassWin = false;
                 EndofRound = true;
+                Debug.Log("Craps");
             }
             else if(roll == 7 || roll == 11)
             {
                 PassWin = true;
                 EndofRound = true;
+                Debug.Log("Natural");
             }
             else
             {
@@ -94,15 +96,15 @@ public class CrapsGame : MonoBehaviour
             if(num == 4)
                 PointIndicator.transform.position = new Vector2(280, -175);
             else if(num == 5)                    
-                PointIndicator.transform.position = new Vector2(290, -110);
+                PointIndicator.transform.position = new Vector2(290, -175);
             else if(num == 6)                    
-                PointIndicator.transform.position = new Vector2(365, -110);
+                PointIndicator.transform.position = new Vector2(365, -175);
             else if(num == 8)                    
-                PointIndicator.transform.position = new Vector2(440, -110);
+                PointIndicator.transform.position = new Vector2(440, -175);
             else if(num == 9)                    
-                PointIndicator.transform.position = new Vector2(515, -110);
+                PointIndicator.transform.position = new Vector2(515, -175);
             else if(num == 10)                   
-                PointIndicator.transform.position = new Vector2(590, -110);
+                PointIndicator.transform.position = new Vector2(590, -175);
         }
     }
 
