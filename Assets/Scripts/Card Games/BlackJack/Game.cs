@@ -74,4 +74,12 @@ public class Game : MonoBehaviour
         Debug.Log("Drawing");
         deck.Draw();
     }
+
+    public void DrawCards(int numOfCards)
+    {
+        for (int i = 0; i < numOfCards; i++)
+        {
+            
+        }
+    }
 }
