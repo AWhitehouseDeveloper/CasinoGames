@@ -8,16 +8,16 @@ public class Deck
     public Card[] deck = new Card[52];
     private int index = 0;
 
-    public void Draw()
+    public Card Draw()
     {
         if(index >= deck.Length)
         {
             Debug.Log("Out of Cards");
             index--;
         }
-        Debug.Log(deck[index].value + deck[index].suit.ToString());
+        //Debug.Log(deck[index].value + deck[index].suit.ToString());
         index++;
-        //return deck[index - 1];
+        return deck[index - 1];
     }
 
     public void Shuffle()
