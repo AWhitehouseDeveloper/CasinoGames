@@ -47,11 +47,10 @@ public static class Utilities
         }
     }
 
-    
-
     public static void Payout(int bet, int multiplier)
     {
-        player.Payout((long)bet * multiplier);
+        //player.Payout((long)bet * multiplier);
+        Debug.Log("Payout of " + (bet * multiplier));
     }
 
     public static int RollDie()
