@@ -34,6 +34,8 @@ public class CrapsGame : MonoBehaviour
     private bool EndofRound = false;
     private int point = 0;
     private bool PassWin = false;
+    private Dictionary<int, int> FieldBets = new Dictionary<int, int>();
+
     #region MainGameFunction(OnRoll, FlipIndicator, and EndRound)
     public void OnRoll()
     {
@@ -42,7 +44,6 @@ public class CrapsGame : MonoBehaviour
         int roll = die1 + die2;
         if(FirstRoll)
         {
-            FieldBet(roll);
             if(roll == 2 || roll == 3 || roll == 12)
             {
                 PassWin = false;
@@ -75,6 +76,8 @@ public class CrapsGame : MonoBehaviour
                 EndofRound = true;
             }
         }
+        if (die1 == die2) HardWays(roll);
+        FieldBet(roll);
         Debug.Log(roll);
         if(EndofRound)
         {
@@ -108,11 +111,6 @@ public class CrapsGame : MonoBehaviour
         }
     }
 
-    public void FieldBet(int roll)
-    {
-
-    }
-
     public void EndRound()
     {
         FirstRoll = true;
@@ -121,4 +119,30 @@ public class CrapsGame : MonoBehaviour
         point = 0;
     }
     #endregion
+
+
+    public void HardWays(int num)
+    {
+
+    }
+
+    public void FieldBet(int roll)
+    {
+        int multiplier = 1;
+        if(FieldBets.ContainsKey(roll))
+        {
+            if (roll == 2) multiplier = 2;
+            else if (roll == 12) multiplier = 3;
+            int amount = FieldBets[roll];
+            Utilities.Payout(amount, multiplier);
+            FieldBets.Clear();
+            PlaceFieldBet(roll, amount);
+        }
+        else FieldBets.Clear();
+    }
+
+    public void PlaceFieldBet(int placement, int amount)
+    {
+        FieldBets.Add(placement, amount);
+    }
 }
