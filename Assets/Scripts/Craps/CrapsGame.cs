@@ -42,7 +42,7 @@ public class CrapsGame : MonoBehaviour
         int roll = die1 + die2;
         if(FirstRoll)
         {
-
+            FieldBet(roll);
             if(roll == 2 || roll == 3 || roll == 12)
             {
                 PassWin = false;
@@ -84,27 +84,33 @@ public class CrapsGame : MonoBehaviour
 
     public void FlipIndicator(int num)
     {
+        PointIndicator.transform.position = Vector3.zero;
         if (num == -1)
         {
-            PointIndicator.transform.position = new Vector2(230, -55);
+            PointIndicator.transform.position = new Vector2(255, 640);
             PointIndicator.GetComponent<Image>().sprite = IndicatorOff;
         }
         else
         {
             PointIndicator.GetComponent<Image>().sprite = IndicatorOn;
             if(num == 4)
-                PointIndicator.transform.position = new Vector2(280, -175);
+                PointIndicator.transform.position = new Vector2(305, 525);
             else if(num == 5)                    
-                PointIndicator.transform.position = new Vector2(290, -175);
+                PointIndicator.transform.position = new Vector2(395, 525);
             else if(num == 6)                    
-                PointIndicator.transform.position = new Vector2(365, -175);
+                PointIndicator.transform.position = new Vector2(495, 525);
             else if(num == 8)                    
-                PointIndicator.transform.position = new Vector2(440, -175);
+                PointIndicator.transform.position = new Vector2(590, 525);
             else if(num == 9)                    
-                PointIndicator.transform.position = new Vector2(515, -175);
+                PointIndicator.transform.position = new Vector2(685, 525);
             else if(num == 10)                   
-                PointIndicator.transform.position = new Vector2(590, -175);
+                PointIndicator.transform.position = new Vector2(780, 525);
         }
+    }
+
+    public void FieldBet(int roll)
+    {
+
     }
 
     public void EndRound()
