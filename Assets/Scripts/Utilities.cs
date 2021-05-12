@@ -47,10 +47,7 @@ public static class Utilities
         }
     }
 
-    public static void Bet()
-    {
-        
-    }
+    
 
     public static void Payout(int bet, int multiplier)
     {
