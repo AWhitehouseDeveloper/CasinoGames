@@ -47,6 +47,11 @@ public static class Utilities
         }
     }
 
+    public static void Bet()
+    {
+        
+    }
+
     public static void Payout(int bet, int multiplier)
     {
         player.Payout((long)bet * multiplier);
@@ -54,6 +59,6 @@ public static class Utilities
 
     public static int RollDie()
     {
-        return Random.Range(1, 6); 
+        return Random.Range(1, 7); 
     }
 }
