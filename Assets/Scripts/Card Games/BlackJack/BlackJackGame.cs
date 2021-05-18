@@ -116,17 +116,23 @@ public class BlackJackGame : MonoBehaviour
             playerCards++;
 
             if (GetHandTotal(playerHand) > 21) payout = winCondition.Bust;
+            Debug.Log(payout.ToString());
         }
     }
     public void OnStand()
     {
+        Debug.Log("Standing");
+        dealerButtons[0].sprite = dealerHand[0].sprite;
         while(GetHandTotal(dealerHand) < 17)
         {
             dealerHand[dealerCards] = deck.Draw();
             dealerButtons[dealerCards].gameObject.SetActive(true);
             dealerCards++;
+            Debug.Log("Dealer hit");
         }
+        Debug.Log("Dealer Stayed");
         CheckWin();
+        Debug.Log(payout.ToString());
     }
     #endregion
     #region Helper
@@ -134,11 +140,11 @@ public class BlackJackGame : MonoBehaviour
     {
         int pTotal = GetHandTotal(playerHand);
         int dTotal = GetHandTotal(dealerHand);
-        if (pTotal > 21) payout = winCondition.Bust;
-        else if (pTotal <= 21 && playerHand.Length == 5) payout = winCondition.FiveCardCharlie;
-        else if (pTotal == 21) payout = winCondition.BlackJack;
-        else if (dTotal < pTotal) payout = winCondition.Win;
-        else if (dTotal > pTotal) payout = winCondition.Loss;
+        if (pTotal > 21) { payout = winCondition.Bust; }
+        else if (pTotal <= 21 && playerHand.Length == 5) { payout = winCondition.FiveCardCharlie; }
+        else if (pTotal == 21) { payout = winCondition.BlackJack; }
+        else if (dTotal < pTotal || pTotal < dTotal && dTotal > 21) { payout = winCondition.Win; }
+        else if (dTotal > pTotal && dTotal <= 21) { payout = winCondition.Loss; }
         else if (dTotal == pTotal) payout = winCondition.None;
     }
     public void handlePayout()
@@ -165,10 +171,19 @@ public class BlackJackGame : MonoBehaviour
     public int GetHandTotal(Card[] hand)
     {
         int total = 0;
-        foreach (Card card in hand)
+        int handSize = 0;
+        int AceCounter = 0;
+        if (hand == dealerHand) handSize = dealerCards;
+        if (hand == playerHand) handSize = playerCards;
+        for(int i = 0; i < handSize; i++)
         {
-            if (card.value > 1 && card.value < 10) total += card.value;
+            if (hand[i].value > 1 && hand[i].value < 10) total += hand[i].value;
+            else if (hand[i].value == 1) { total += 11; AceCounter++; }
             else total += 10;
+        }
+        while(total > 21 && AceCounter > 0)
+        {
+            total -= 10;
         }
         return total;
     }
