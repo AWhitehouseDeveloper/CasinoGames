@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     public void OnWithdraw()
     {
-        ChipMoney += 10000;
+        ChipMoney += 5000;
     }
 
 }
