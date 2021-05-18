@@ -36,7 +36,7 @@ public class CrapsGame : MonoBehaviour
     private bool PassWin = false;
     private int PassBet = 0;
     private int DontPassBet = 0;
-    private Dictionary<int, int> FieldBets = new Dictionary<int, int>();
+    private int FieldAmount = 0;
     private Dictionary<int, int> HardwayBets = new Dictionary<int, int>();
     private Dictionary<int, int> OneRollBets = new Dictionary<int, int>();
 
@@ -81,7 +81,7 @@ public class CrapsGame : MonoBehaviour
             }
         }
         if (die1 == die2) Hardways(roll);
-        FieldBet(roll);
+        if(FieldAmount > 0) FieldBets(roll);
         OneRolls(roll);
         Debug.Log(roll);
         if (EndofRound)
@@ -118,6 +118,7 @@ public class CrapsGame : MonoBehaviour
 
     public void EndRound()
     {
+        PassBetOut();
         FirstRoll = true;
         EndofRound = false;
         FlipIndicator(-1);
@@ -126,6 +127,19 @@ public class CrapsGame : MonoBehaviour
     #endregion
 
     #region Pass/DontPassBet
+    public void PassBetOut()
+    {
+        if(PassWin)
+        {
+            Utilities.Payout(PassBet, 2);
+        }
+        else
+        {
+            Utilities.Payout(DontPassBet, 2);
+        }
+        PassBet = 0;
+        DontPassBet = 0;
+    }
     public void PlacePassBet(int amount)
     {
         PassBet += amount;
@@ -137,30 +151,18 @@ public class CrapsGame : MonoBehaviour
     #endregion
 
     #region FieldBets
-    public void FieldBet(int roll)
+    public void FieldBets(int roll)
     {
         int multiplier = 1;
-        if (FieldBets.ContainsKey(roll))
-        {
-            if (roll == 2) multiplier = 2;
-            else if (roll == 12) multiplier = 3;
-            int amount = FieldBets[roll];
-            Utilities.Payout(amount, multiplier);
-            FieldBets.Clear();
-            PlaceFieldBet(roll, amount);
-        }
-        else FieldBets.Clear();
+        if (roll == 2) multiplier = 2;
+        else if (roll == 12) multiplier = 3;
+        Utilities.Payout(FieldAmount, multiplier);
+        if (roll == 6 || roll == 7 || roll == 8) FieldAmount = 0;
     }
 
-    public void OnClickFieldBet(int placement)
+    public void PlaceFieldBet(int amount)
     {
-        PlaceFieldBet(placement, 500);
-        Debug.Log("Field Bet Placed on " + placement);
-    }
-
-    public void PlaceFieldBet(int placement, int amount)
-    {
-        FieldBets.Add(placement, amount);
+        FieldAmount += amount;
     }
     #endregion
 
@@ -168,14 +170,21 @@ public class CrapsGame : MonoBehaviour
     public void Hardways(int roll)
     {
         int multiplier = 1;
+        if(HardwayBets.ContainsKey(-1))
+        {
+            multiplier = 7;
+            int amount = HardwayBets[-1];
+            Utilities.Payout(amount, multiplier);
+        }
+        multiplier = 1;
         if (HardwayBets.ContainsKey(roll))
         {
-            if (roll == 2 || roll == 10) multiplier = 7;
+            if (roll == 4 || roll == 10) multiplier = 7;
             else if (roll == 6 || roll == 8) multiplier = 9;
             int amount = HardwayBets[roll];
             Utilities.Payout(amount, multiplier);
             HardwayBets.Clear();
-            PlaceFieldBet(roll, amount);
+            PlaceHardwayBet(roll, amount);
         }
         else HardwayBets.Clear();
     }
