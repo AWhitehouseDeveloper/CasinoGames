@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public string Money = "Infinite";
     public long ChipMoney;
+    public long Money = 5000;
 
     public void Payout(long pay)
     {
