@@ -484,7 +484,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 178309604}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1320185523}
+        m_TargetAssemblyTypeName: BlackJackGame, Assembly-CSharp
+        m_MethodName: OnStand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &178309604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,8 +670,7 @@ MonoBehaviour:
   m_text: BACK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
-  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1,
-    type: 2}
+  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1183,8 +1194,7 @@ MonoBehaviour:
   m_text: $4,000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
-  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1,
-    type: 2}
+  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2753,8 +2763,7 @@ MonoBehaviour:
   m_text: HIT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
-  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1,
-    type: 2}
+  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3292,8 +3301,7 @@ MonoBehaviour:
   m_text: 16
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
-  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1,
-    type: 2}
+  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3622,8 +3630,7 @@ MonoBehaviour:
   m_text: RULES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
-  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1,
-    type: 2}
+  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3758,8 +3765,7 @@ MonoBehaviour:
   m_text: 'CHIPS:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
-  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1,
-    type: 2}
+  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3915,7 +3921,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1248556636}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1320185523}
+        m_TargetAssemblyTypeName: BlackJackGame, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1248556636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4111,6 +4129,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cb4b0877e8f941d4882023a366ffb211, type: 3}
   - {fileID: 21300000, guid: cc6506a3ce4385a46ad3c4100a7739f5, type: 3}
   - {fileID: 21300000, guid: 4caec9ae097915649a9f542ed06639ee, type: 3}
+  backOfCard: {fileID: 0}
+  playerButtons:
+  - {fileID: 1296725410}
+  - {fileID: 188623318}
+  - {fileID: 1041190357}
+  - {fileID: 1992056489}
+  - {fileID: 1902250235}
+  dealerButtons:
+  - {fileID: 323047869}
+  - {fileID: 840054770}
+  - {fileID: 423846474}
+  - {fileID: 640937383}
+  - {fileID: 1950972071}
 --- !u!4 &1320185524
 Transform:
   m_ObjectHideFlags: 0
@@ -4176,63 +4207,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
-        type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
-        type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 540.72284
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
-        type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 279.40192
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
-        type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
       propertyPath: m_LocalPosition.z
       value: -80.40185
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
-        type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
-        type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
-        type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
-        type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
-        type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
-        type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
-        type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4091218833720628007, guid: 66bfafc67f1b26d439e01565c095157e,
-        type: 3}
+    - target: {fileID: 4091218833720628007, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
       propertyPath: m_Name
       value: SceneController
       objectReference: {fileID: 0}
@@ -4428,8 +4447,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!114 &1800139067 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2471498706814971647, guid: 66bfafc67f1b26d439e01565c095157e,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 2471498706814971647, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
   m_PrefabInstance: {fileID: 1505474558}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -4573,8 +4591,7 @@ MonoBehaviour:
   m_text: STAY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
-  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1,
-    type: 2}
+  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
