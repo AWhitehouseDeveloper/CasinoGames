@@ -258,19 +258,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 57753995}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 267157102}
-        m_TargetAssemblyTypeName: CrapsGame, Assembly-CSharp
-        m_MethodName: OnClickHardwayBet
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: [{m_Target: {fileID: 267157102}, m_TargetAssemblyTypeName: 'CrapsGame,
+            Assembly-CSharp', m_MethodName: OnClickHardwayBet, m_Mode: 3, m_Arguments: {
+            m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+              UnityEngine', m_IntArgument: 6, m_FloatArgument: 0, m_StringArgument: '',
+            m_BoolArgument: 0}, m_CallState: 2}]
 --- !u!114 &57753995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,19 +382,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 137074965}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 267157102}
-        m_TargetAssemblyTypeName: CrapsGame, Assembly-CSharp
-        m_MethodName: OnClickHardwayBet
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: [{m_Target: {fileID: 267157102}, m_TargetAssemblyTypeName: 'CrapsGame,
+            Assembly-CSharp', m_MethodName: OnClickHardwayBet, m_Mode: 3, m_Arguments: {
+            m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+              UnityEngine', m_IntArgument: 8, m_FloatArgument: 0, m_StringArgument: '',
+            m_BoolArgument: 0}, m_CallState: 2}]
 --- !u!114 &137074965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -796,19 +780,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 378860032}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 267157102}
-        m_TargetAssemblyTypeName: CrapsGame, Assembly-CSharp
-        m_MethodName: OnClickOneRollBet
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: [{m_Target: {fileID: 267157102}, m_TargetAssemblyTypeName: 'CrapsGame,
+            Assembly-CSharp', m_MethodName: OnClickOneRollBet, m_Mode: 3, m_Arguments: {
+            m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+              UnityEngine', m_IntArgument: 2, m_FloatArgument: 0, m_StringArgument: '',
+            m_BoolArgument: 0}, m_CallState: 2}]
 --- !u!114 &378860032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,19 +904,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 421333389}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 267157102}
-        m_TargetAssemblyTypeName: CrapsGame, Assembly-CSharp
-        m_MethodName: PlacePassBet
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: [{m_Target: {fileID: 267157102}, m_TargetAssemblyTypeName: 'CrapsGame,
+            Assembly-CSharp', m_MethodName: PlacePassBet, m_Mode: 1, m_Arguments: {
+            m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+              UnityEngine', m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: '',
+            m_BoolArgument: 0}, m_CallState: 2}]
 --- !u!114 &421333389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1060,19 +1028,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 613531540}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 267157102}
-        m_TargetAssemblyTypeName: CrapsGame, Assembly-CSharp
-        m_MethodName: OnClickOneRollBet
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 12
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: [{m_Target: {fileID: 267157102}, m_TargetAssemblyTypeName: 'CrapsGame,
+            Assembly-CSharp', m_MethodName: OnClickOneRollBet, m_Mode: 3, m_Arguments: {
+            m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+              UnityEngine', m_IntArgument: 12, m_FloatArgument: 0, m_StringArgument: '',
+            m_BoolArgument: 0}, m_CallState: 2}]
 --- !u!114 &613531540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1737,19 +1697,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1201904834}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 267157102}
-        m_TargetAssemblyTypeName: CrapsGame, Assembly-CSharp
-        m_MethodName: PlaceDontPassBet
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: [{m_Target: {fileID: 267157102}, m_TargetAssemblyTypeName: 'CrapsGame,
+            Assembly-CSharp', m_MethodName: PlaceDontPassBet, m_Mode: 1, m_Arguments: {
+            m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+              UnityEngine', m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: '',
+            m_BoolArgument: 0}, m_CallState: 2}]
 --- !u!114 &1201904834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2133,19 +2085,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1425707316}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 267157102}
-        m_TargetAssemblyTypeName: CrapsGame, Assembly-CSharp
-        m_MethodName: OnClickHardwayBet
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: [{m_Target: {fileID: 267157102}, m_TargetAssemblyTypeName: 'CrapsGame,
+            Assembly-CSharp', m_MethodName: OnClickHardwayBet, m_Mode: 3, m_Arguments: {
+            m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+              UnityEngine', m_IntArgument: 4, m_FloatArgument: 0, m_StringArgument: '',
+            m_BoolArgument: 0}, m_CallState: 2}]
 --- !u!114 &1425707316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2385,19 +2329,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1628139893}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 267157102}
-        m_TargetAssemblyTypeName: CrapsGame, Assembly-CSharp
-        m_MethodName: OnClickOneRollBet
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 11
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: [{m_Target: {fileID: 267157102}, m_TargetAssemblyTypeName: 'CrapsGame,
+            Assembly-CSharp', m_MethodName: OnClickOneRollBet, m_Mode: 3, m_Arguments: {
+            m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+              UnityEngine', m_IntArgument: 11, m_FloatArgument: 0, m_StringArgument: '',
+            m_BoolArgument: 0}, m_CallState: 2}]
 --- !u!114 &1628139893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2517,19 +2453,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1730083753}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 267157102}
-        m_TargetAssemblyTypeName: CrapsGame, Assembly-CSharp
-        m_MethodName: OnClickOneRollBet
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: -1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: [{m_Target: {fileID: 267157102}, m_TargetAssemblyTypeName: 'CrapsGame,
+            Assembly-CSharp', m_MethodName: OnClickOneRollBet, m_Mode: 3, m_Arguments: {
+            m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+              UnityEngine', m_IntArgument: -1, m_FloatArgument: 0, m_StringArgument: '',
+            m_BoolArgument: 0}, m_CallState: 2}]
 --- !u!114 &1730083753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2649,19 +2577,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1772582687}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 267157102}
-        m_TargetAssemblyTypeName: CrapsGame, Assembly-CSharp
-        m_MethodName: OnClickOneRollBet
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: [{m_Target: {fileID: 267157102}, m_TargetAssemblyTypeName: 'CrapsGame,
+            Assembly-CSharp', m_MethodName: OnClickOneRollBet, m_Mode: 3, m_Arguments: {
+            m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+              UnityEngine', m_IntArgument: 3, m_FloatArgument: 0, m_StringArgument: '',
+            m_BoolArgument: 0}, m_CallState: 2}]
 --- !u!114 &1772582687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2781,19 +2701,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1788624272}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 267157102}
-        m_TargetAssemblyTypeName: CrapsGame, Assembly-CSharp
-        m_MethodName: OnClickHardwayBet
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: [{m_Target: {fileID: 267157102}, m_TargetAssemblyTypeName: 'CrapsGame,
+            Assembly-CSharp', m_MethodName: OnClickHardwayBet, m_Mode: 3, m_Arguments: {
+            m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+              UnityEngine', m_IntArgument: 10, m_FloatArgument: 0, m_StringArgument: '',
+            m_BoolArgument: 0}, m_CallState: 2}]
 --- !u!114 &1788624272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3022,19 +2934,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1817272913}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 267157102}
-        m_TargetAssemblyTypeName: CrapsGame, Assembly-CSharp
-        m_MethodName: OnClickOneRollBet
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: [{m_Target: {fileID: 267157102}, m_TargetAssemblyTypeName: 'CrapsGame,
+            Assembly-CSharp', m_MethodName: OnClickOneRollBet, m_Mode: 3, m_Arguments: {
+            m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+              UnityEngine', m_IntArgument: 7, m_FloatArgument: 0, m_StringArgument: '',
+            m_BoolArgument: 0}, m_CallState: 2}]
 --- !u!114 &1817272913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3080,51 +2984,63 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
+        type: 3}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 540.72284
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
+        type: 3}
       propertyPath: m_LocalPosition.y
       value: 279.40192
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
+        type: 3}
       propertyPath: m_LocalPosition.z
       value: -80.40185
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
+        type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
+        type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
+        type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
+    - target: {fileID: 2437682754178713248, guid: 66bfafc67f1b26d439e01565c095157e,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4091218833720628007, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
+    - target: {fileID: 4091218833720628007, guid: 66bfafc67f1b26d439e01565c095157e,
+        type: 3}
       propertyPath: m_Name
       value: SceneController
       objectReference: {fileID: 0}
@@ -3132,7 +3048,8 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
 --- !u!114 &1843407966 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2471498706814971647, guid: 66bfafc67f1b26d439e01565c095157e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2471498706814971647, guid: 66bfafc67f1b26d439e01565c095157e,
+    type: 3}
   m_PrefabInstance: {fileID: 1843407965}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -3387,7 +3304,8 @@ MonoBehaviour:
   m_text: BACK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
-  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
+  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4131,7 +4049,8 @@ MonoBehaviour:
   m_text: $4,000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
-  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
+  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5213,7 +5132,8 @@ MonoBehaviour:
   m_text: 'CHIPS:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
-  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
+  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5568,7 +5488,8 @@ MonoBehaviour:
   m_text: ROLL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
-  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
+  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5657,7 +5578,8 @@ MonoBehaviour:
   m_text: RULES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
-  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1, type: 2}
+  m_sharedMaterial: {fileID: -4768142162762502414, guid: 5306c68494bcbcd40995a2293dfad3c1,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
