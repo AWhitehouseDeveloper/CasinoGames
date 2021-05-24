@@ -12,6 +12,12 @@ public static class Utilities
         Debug.Log("Payout of " + (bet * multiplier));
     }
 
+    public static void Payout(int bet, float multiplier)
+    {
+        //player.Payout((long)bet * multiplier);
+        Debug.Log("Payout of " + (bet * multiplier));
+    }
+
     public static int RollDie()
     {
         return Random.Range(1, 7); 

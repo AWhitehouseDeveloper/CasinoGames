@@ -156,12 +156,20 @@ public class CrapsGame : MonoBehaviour
     #region PointBets
     private void Points(int roll)
     {
-        int multiplier = 1;
+        float multiplier = 1;
         if (PointBets.ContainsKey(roll))
         {
-            if (roll == 5)
+            if (roll == 4 || roll == 10)
             {
-
+                multiplier = 2;
+            }
+            else if(roll == 5 || roll == 9)
+            {
+                multiplier = (3 / 2);
+            }
+            else if(roll == 6 || roll == 8)
+            {
+                multiplier = (6 / 5);
             }
             int amount = PointBets[roll];
             Utilities.Payout(amount, multiplier);
