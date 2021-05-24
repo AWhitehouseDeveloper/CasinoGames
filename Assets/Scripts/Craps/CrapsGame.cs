@@ -27,6 +27,7 @@ public class CrapsGame : MonoBehaviour
     /// Any single roll bet is always affected (win or lose) by the outcome of any roll.
     /// 
     /// </summary>
+    Betting betting = new Betting();
     public GameObject PointIndicator;
     public Sprite IndicatorOn;
     public Sprite IndicatorOff;
@@ -38,6 +39,7 @@ public class CrapsGame : MonoBehaviour
     private int DontPassBet = 0;
     private int FieldAmount = 0;
     private Dictionary<int, int> HardwayBets = new Dictionary<int, int>();
+    private Dictionary<int, int> PointBets = new Dictionary<int, int>();
     private Dictionary<int, int> OneRollBets = new Dictionary<int, int>();
 
     #region MainGameFunction(OnRoll, FlipIndicator, and EndRound)
@@ -82,6 +84,7 @@ public class CrapsGame : MonoBehaviour
         }
         if (die1 == die2) Hardways(roll);
         if(FieldAmount > 0) FieldBets(roll);
+        Points(roll);
         OneRolls(roll);
         Debug.Log(roll);
         if (EndofRound)
@@ -90,7 +93,7 @@ public class CrapsGame : MonoBehaviour
         }
     }
 
-    public void FlipIndicator(int num)
+    private void FlipIndicator(int num)
     {
         PointIndicator.transform.position = Vector3.zero;
         if (num == -1)
@@ -116,7 +119,7 @@ public class CrapsGame : MonoBehaviour
         }
     }
 
-    public void EndRound()
+    private void EndRound()
     {
         PassBetOut();
         FirstRoll = true;
@@ -127,7 +130,7 @@ public class CrapsGame : MonoBehaviour
     #endregion
 
     #region Pass/DontPassBet
-    public void PassBetOut()
+    private void PassBetOut()
     {
         if(PassWin)
         {
@@ -140,18 +143,55 @@ public class CrapsGame : MonoBehaviour
         PassBet = 0;
         DontPassBet = 0;
     }
-    public void PlacePassBet(int amount)
+    public void PlacePassBet()
     {
-        PassBet += amount;
+        PassBet += betting.GetSelectedChip();
     }
-    public void PlaceDontPassBet(int amount)
+    public void PlaceDontPassBet()
     {
-        DontPassBet += amount;
+        DontPassBet += betting.GetSelectedChip();
+    }
+    #endregion
+
+    #region PointBets
+    private void Points(int roll)
+    {
+        float multiplier = 1;
+        if (PointBets.ContainsKey(roll))
+        {
+            if (roll == 4 || roll == 10)
+            {
+                multiplier = 2;
+            }
+            else if(roll == 5 || roll == 9)
+            {
+                multiplier = (3 / 2);
+            }
+            else if(roll == 6 || roll == 8)
+            {
+                multiplier = (6 / 5);
+            }
+            int amount = PointBets[roll];
+            Utilities.Payout(amount, multiplier);
+            PointBets.Clear();
+            PlacePointBet(roll, amount);
+        }
+    }
+
+    public void OnClickPointBet(int placement)
+    {
+        PlacePointBet(placement, betting.GetSelectedChip());
+        Debug.Log("Point Bet Placed on " + placement);
+    }
+
+    public void PlacePointBet(int placement, int amount)
+    {
+        PointBets.Add(placement, amount);
     }
     #endregion
 
     #region FieldBets
-    public void FieldBets(int roll)
+    private void FieldBets(int roll)
     {
         int multiplier = 1;
         if (roll == 2) multiplier = 2;
@@ -160,14 +200,14 @@ public class CrapsGame : MonoBehaviour
         if (roll == 6 || roll == 7 || roll == 8) FieldAmount = 0;
     }
 
-    public void PlaceFieldBet(int amount)
+    public void PlaceFieldBet()
     {
-        FieldAmount += amount;
+        FieldAmount += betting.GetSelectedChip();
     }
     #endregion
 
     #region Hardways
-    public void Hardways(int roll)
+    private void Hardways(int roll)
     {
         int multiplier = 1;
         if(HardwayBets.ContainsKey(-1))
@@ -191,7 +231,7 @@ public class CrapsGame : MonoBehaviour
 
     public void OnClickHardwayBet(int placement)
     {
-        PlaceHardwayBet(placement, 100);
+        PlaceHardwayBet(placement, betting.GetSelectedChip());
         Debug.Log("Hardway Bet Placed on " + placement);
     }
 
@@ -202,7 +242,7 @@ public class CrapsGame : MonoBehaviour
     #endregion
 
     #region OneRolls
-    public void OneRolls(int roll)
+    private void OneRolls(int roll)
     {
         Dictionary<int, int> temp = new Dictionary<int, int>();
         int multiplier = 1;
@@ -228,7 +268,7 @@ public class CrapsGame : MonoBehaviour
 
     public void OnClickOneRollBet(int placement)
     {
-        PlaceOneRollBet(placement, 1000);
+        PlaceOneRollBet(placement, betting.GetSelectedChip());
         Debug.Log("OneRoll Bet Placed on " + placement);
     }
 
