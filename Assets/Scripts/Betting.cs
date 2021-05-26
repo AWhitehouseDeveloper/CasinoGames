@@ -5,15 +5,7 @@ using UnityEngine.UI;
 
 public class Betting : MonoBehaviour
 {
-    public static Sprite FiveThousand;
-    public static Sprite OneThousand;
-    public static Sprite FiveHundred;
-    public static Sprite OneHundred;
-    public static Sprite Fifty;
-    public static Sprite Twenty;
-    public static Sprite Ten;
-    public static Sprite Five;
-    public static Sprite One;
+    public List<Image> chipSprites;
     public List<Image> arrowSprites;
 
     [Range(1, 9)] private static int selectedChip = 1;
@@ -22,14 +14,22 @@ public class Betting : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (selectedChip != 1) selectedChip--;
+            if (selectedChip != 0) selectedChip--;
+            else selectedChip = 8;
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (selectedChip != 9) selectedChip++;
+            if (selectedChip != 8) selectedChip++;
+            else selectedChip = 0;
         }
         PositionArrow();
     }
+
+    public void ChangeButtonImage(Button b)
+    {
+        b.GetComponent<Image>().sprite = chipSprites[selectedChip].sprite;
+    }
+
     public int GetSelectedChip()
     {
         switch (selectedChip)
@@ -56,12 +56,17 @@ public class Betting : MonoBehaviour
         return 0;
     }
 
+    public Image GetSelectedChipSprite()
+    {
+        return chipSprites[selectedChip];   
+    }
+
     private void PositionArrow()
     {
         for (int i = 0; i < arrowSprites.Count; i++)
         {
-            if (i == selectedChip) arrowSprites[i].GetComponent<GameObject>().SetActive(true);
-            else arrowSprites[i].GetComponent<GameObject>().SetActive(false);
+            if (i == selectedChip) arrowSprites[i].gameObject.SetActive(true);
+            else arrowSprites[i].gameObject.SetActive(false);
         }
     }
 }
