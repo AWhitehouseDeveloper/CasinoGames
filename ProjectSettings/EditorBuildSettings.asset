@@ -23,13 +23,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Games/Roulette.unity
     guid: 662ff209e1b4899489fb4b18c2626fd8
-  - enabled: 1
-    path: Assets/Scenes/Menus/Options.unity
-    guid: 04cb7228140b4a243917e35d6427c4b7
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Menus/Withdraw.unity
     guid: 784937eaea694bf42a9eb51135c3e1e7
   - enabled: 1
     path: Assets/Scenes/Menus/Options.unity
     guid: 5d4c0940b2cc22c4a9ad5e7e6935e0fc
+  - enabled: 1
+    path: Assets/Scenes/Rules/CrapsRules.unity
+    guid: 4ab52c186905f5b4eb4cf53a11cb6cfd
+  - enabled: 1
+    path: Assets/Scenes/Rules/BlackjackRules.unity
+    guid: 5719f8b8e69a2244598b1eee47f2e19d
+  - enabled: 1
+    path: Assets/Scenes/Rules/PokerRules.unity
+    guid: 72a10f6807a6a2146b7e230c5a7db998
   m_configObjects: {}
