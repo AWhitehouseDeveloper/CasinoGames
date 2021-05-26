@@ -484,19 +484,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 178309604}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1320185523}
-        m_TargetAssemblyTypeName: BlackJackGame, Assembly-CSharp
-        m_MethodName: OnStand
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &178309604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3922,13 +3910,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1320185523}
-        m_TargetAssemblyTypeName: BlackJackGame, Assembly-CSharp
-        m_MethodName: OnHit
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4131,17 +4119,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4caec9ae097915649a9f542ed06639ee, type: 3}
   backOfCard: {fileID: 0}
   playerButtons:
-  - {fileID: 1296725410}
-  - {fileID: 188623318}
-  - {fileID: 1041190357}
-  - {fileID: 1992056489}
-  - {fileID: 1902250235}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   dealerButtons:
-  - {fileID: 323047869}
-  - {fileID: 840054770}
-  - {fileID: 423846474}
-  - {fileID: 640937383}
-  - {fileID: 1950972071}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1320185524
 Transform:
   m_ObjectHideFlags: 0
