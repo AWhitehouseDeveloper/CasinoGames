@@ -7,8 +7,14 @@ public class Betting : MonoBehaviour
 {
     public List<Image> chipSprites;
     public List<Image> arrowSprites;
+    public GameObject ButtonsContainer;
 
+    private GameObject[] buttons;
     [Range(1, 9)] private static int selectedChip = 1;
+
+    private void Awake()
+    {
+    }
 
     private void Update()
     {
@@ -27,7 +33,21 @@ public class Betting : MonoBehaviour
 
     public void ChangeButtonImage(Button b)
     {
-        b.GetComponent<Image>().sprite = chipSprites[selectedChip].sprite;
+        ChangeButtonImage(b, selectedChip);
+    }
+
+    public void ChangeButtonImage(Button b, int chipNum)
+    {
+        if (b.name == "Field")
+        {
+            b.GetComponentInChildren<Image>().sprite = chipSprites[chipNum].sprite;
+            b.GetComponentInChildren<Image>().type = Image.Type.Simple;
+        }
+        else
+        {
+            b.GetComponent<Image>().sprite = chipSprites[chipNum].sprite;
+            b.GetComponent<Image>().type = Image.Type.Simple;
+        }
     }
 
     public int GetSelectedChip()
@@ -58,7 +78,20 @@ public class Betting : MonoBehaviour
 
     public Image GetSelectedChipSprite()
     {
-        return chipSprites[selectedChip];   
+        return chipSprites[selectedChip];
+    }
+
+    public int GetChipNumFromValue(int i)
+    {
+        if (i > 5000) return 8;
+        else if (i > 1000) return 7;
+        else if (i > 500) return 6;
+        else if (i > 100) return 5;
+        else if (i > 50) return 4;
+        else if (i > 25) return 3;
+        else if (i > 10) return 2;
+        else if (i > 5) return 1;
+        return 0;
     }
 
     private void PositionArrow()
@@ -69,4 +102,21 @@ public class Betting : MonoBehaviour
             else arrowSprites[i].gameObject.SetActive(false);
         }
     }
+
+    public Button GetButton(string buttonName)
+    {
+        if (ButtonsContainer == null) Debug.Log("Container is a Bitch");
+        buttons = ButtonsContainer.GetComponentsInChildren<GameObject>();
+        if (buttons == null) Debug.Log("Null");
+        foreach(GameObject B in buttons)
+        {
+            if(B.name == buttonName)
+            {
+                return B.GetComponent<Button>();
+            }
+        }
+
+        return null;
+    }
+
 }
