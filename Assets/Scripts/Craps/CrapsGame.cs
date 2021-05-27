@@ -27,7 +27,7 @@ public class CrapsGame : MonoBehaviour
     /// Any single roll bet is always affected (win or lose) by the outcome of any roll.
     /// 
     /// </summary>
-    Betting betting = new Betting();
+    public Betting betting;
     public GameObject PointIndicator;
     public Sprite IndicatorOn;
     public Sprite IndicatorOff;
@@ -87,7 +87,7 @@ public class CrapsGame : MonoBehaviour
         Points(roll);
         OneRolls(roll);
 
-        //SetButtonSprites();
+        SetButtonSprites();
         Debug.Log(roll);
         if (EndofRound)
         {
@@ -148,10 +148,12 @@ public class CrapsGame : MonoBehaviour
     public void PlacePassBet()
     {
         PassBet += betting.GetSelectedChip();
+        SetButtonSprites();
     }
     public void PlaceDontPassBet()
     {
         DontPassBet += betting.GetSelectedChip();
+        SetButtonSprites();
     }
     #endregion
 
@@ -184,13 +186,14 @@ public class CrapsGame : MonoBehaviour
     public void OnClickPointBet(int placement)
     {
         PlacePointBet(placement, betting.GetSelectedChip());
-        Debug.Log("Point Bet Placed on " + placement);
     }
 
     public void PlacePointBet(int placement, int amount)
     {
         if (PointBets.ContainsKey(placement)) PointBets[placement] += amount;
         else PointBets.Add(placement, amount);
+        Debug.Log("Point Bet of " + amount + " Placed on " + placement);
+        SetButtonSprites();
     }
     #endregion
 
@@ -207,6 +210,7 @@ public class CrapsGame : MonoBehaviour
     public void PlaceFieldBet()
     {
         FieldAmount += betting.GetSelectedChip();
+        SetButtonSprites();
     }
     #endregion
 
@@ -241,13 +245,14 @@ public class CrapsGame : MonoBehaviour
     public void OnClickHardwayBet(int placement)
     {
         PlaceHardwayBet(placement, betting.GetSelectedChip());
-        Debug.Log("Hardway Bet Placed on " + placement);
     }
 
     public void PlaceHardwayBet(int placement, int amount)
     {
         if (HardwayBets.ContainsKey(placement)) HardwayBets[placement] += amount;
         else HardwayBets.Add(placement, amount);
+        Debug.Log("Hardway Bet of " + amount + " Placed on " + placement);
+        SetButtonSprites();
     }
     #endregion
 
@@ -279,13 +284,15 @@ public class CrapsGame : MonoBehaviour
     public void OnClickOneRollBet(int placement)
     {
         PlaceOneRollBet(placement, betting.GetSelectedChip());
-        Debug.Log("OneRoll Bet Placed on " + placement);
     }
 
     public void PlaceOneRollBet(int placement, int amount)
     {
         if (OneRollBets.ContainsKey(placement)) OneRollBets[placement] += amount;
         else OneRollBets.Add(placement, amount);
+        Debug.Log("OneRoll Bet of " + amount + " Placed on " + placement);
+
+        SetButtonSprites();
     }
     #endregion
 

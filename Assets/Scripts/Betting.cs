@@ -9,12 +9,8 @@ public class Betting : MonoBehaviour
     public List<Image> arrowSprites;
     public GameObject ButtonsContainer;
 
-    private GameObject[] buttons;
+    private Button[] buttons;
     [Range(1, 9)] private static int selectedChip = 1;
-
-    private void Awake()
-    {
-    }
 
     private void Update()
     {
@@ -29,11 +25,6 @@ public class Betting : MonoBehaviour
             else selectedChip = 0;
         }
         PositionArrow();
-    }
-
-    public void ChangeButtonImage(Button b)
-    {
-        ChangeButtonImage(b, selectedChip);
     }
 
     public void ChangeButtonImage(Button b, int chipNum)
@@ -54,23 +45,23 @@ public class Betting : MonoBehaviour
     {
         switch (selectedChip)
         {
-            case 1:
+            case 0:
                 return 1;
-            case 2:
+            case 1:
                 return 5;
-            case 3:
+            case 2:
                 return 10;
-            case 4:
+            case 3:
                 return 20;
-            case 5:
+            case 4:
                 return 50;
-            case 6:
+            case 5:
                 return 100;
-            case 7:
+            case 6:
                 return 500;
-            case 8:
+            case 7:
                 return 1000;
-            case 9:
+            case 8:
                 return 5000;
         }
         return 0;
@@ -83,14 +74,14 @@ public class Betting : MonoBehaviour
 
     public int GetChipNumFromValue(int i)
     {
-        if (i > 5000) return 8;
-        else if (i > 1000) return 7;
-        else if (i > 500) return 6;
-        else if (i > 100) return 5;
-        else if (i > 50) return 4;
-        else if (i > 25) return 3;
-        else if (i > 10) return 2;
-        else if (i > 5) return 1;
+        if (i >= 5000) return 8;
+        else if (i >= 1000) return 7;
+        else if (i >= 500) return 6;
+        else if (i >= 100) return 5;
+        else if (i >= 50) return 4;
+        else if (i >= 20) return 3;
+        else if (i >= 10) return 2;
+        else if (i >= 5) return 1;
         return 0;
     }
 
@@ -105,10 +96,8 @@ public class Betting : MonoBehaviour
 
     public Button GetButton(string buttonName)
     {
-        if (ButtonsContainer == null) Debug.Log("Container is a Bitch");
-        buttons = ButtonsContainer.GetComponentsInChildren<GameObject>();
-        if (buttons == null) Debug.Log("Null");
-        foreach(GameObject B in buttons)
+        buttons = ButtonsContainer.GetComponentsInChildren<Button>();
+        foreach(Button B in buttons)
         {
             if(B.name == buttonName)
             {
