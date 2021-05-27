@@ -82,10 +82,12 @@ public class CrapsGame : MonoBehaviour
                 EndofRound = true;
             }
         }
-        if (die1 == die2) Hardways(roll);
+        Hardways(die1, die2);
         if(FieldAmount > 0) FieldBets(roll);
         Points(roll);
         OneRolls(roll);
+
+        //SetButtonSprites();
         Debug.Log(roll);
         if (EndofRound)
         {
@@ -173,8 +175,9 @@ public class CrapsGame : MonoBehaviour
             }
             int amount = PointBets[roll];
             Utilities.Payout(amount, multiplier);
-            PointBets.Clear();
-            PlacePointBet(roll, amount);
+            PointBets.Remove(roll);
+            //PointBets.Clear();
+            //PlacePointBet(roll, amount);
         }
     }
 
@@ -186,7 +189,8 @@ public class CrapsGame : MonoBehaviour
 
     public void PlacePointBet(int placement, int amount)
     {
-        PointBets.Add(placement, amount);
+        if (PointBets.ContainsKey(placement)) PointBets[placement] += amount;
+        else PointBets.Add(placement, amount);
     }
     #endregion
 
@@ -207,26 +211,31 @@ public class CrapsGame : MonoBehaviour
     #endregion
 
     #region Hardways
-    private void Hardways(int roll)
+    private void Hardways(int roll1, int roll2)
     {
-        int multiplier = 1;
-        if(HardwayBets.ContainsKey(-1))
+        if (HardwayBets.ContainsKey(-1))
         {
-            multiplier = 7;
+            int multiplier = 7;
             int amount = HardwayBets[-1];
             Utilities.Payout(amount, multiplier);
         }
-        multiplier = 1;
+        int roll = roll1 + roll2;
         if (HardwayBets.ContainsKey(roll))
         {
-            if (roll == 4 || roll == 10) multiplier = 7;
-            else if (roll == 6 || roll == 8) multiplier = 9;
+            int multiplier = 1;
+            if (roll == 4 || roll == 10 && roll1 == roll2)
+            {
+                multiplier = 7;
+            }
+            else if (roll == 6 || roll == 8 && roll1 == roll2)
+            {
+                multiplier = 9;
+            }
             int amount = HardwayBets[roll];
             Utilities.Payout(amount, multiplier);
-            HardwayBets.Clear();
-            PlaceHardwayBet(roll, amount);
+            HardwayBets.Remove(roll);
         }
-        else HardwayBets.Clear();
+        if (roll == 7) HardwayBets.Clear();
     }
 
     public void OnClickHardwayBet(int placement)
@@ -237,7 +246,8 @@ public class CrapsGame : MonoBehaviour
 
     public void PlaceHardwayBet(int placement, int amount)
     {
-        HardwayBets.Add(placement, amount);
+        if (HardwayBets.ContainsKey(placement)) HardwayBets[placement] += amount;
+        else HardwayBets.Add(placement, amount);
     }
     #endregion
 
@@ -274,7 +284,97 @@ public class CrapsGame : MonoBehaviour
 
     public void PlaceOneRollBet(int placement, int amount)
     {
-        OneRollBets.Add(placement, amount);
+        if (OneRollBets.ContainsKey(placement)) OneRollBets[placement] += amount;
+        else OneRollBets.Add(placement, amount);
     }
     #endregion
+
+    public void SetButtonSprites()
+    {
+        foreach(int H in HardwayBets.Keys)
+        {
+            switch (H)
+            {
+                case 4:
+                    betting.ChangeButtonImage(betting.GetButton("Double2"), betting.GetChipNumFromValue(HardwayBets[H]));
+                    break;
+                case 6:
+                    betting.ChangeButtonImage(betting.GetButton("Double3"),  betting.GetChipNumFromValue(HardwayBets[H]));
+                    break;
+                case 8:
+                    betting.ChangeButtonImage(betting.GetButton("Double4"),  betting.GetChipNumFromValue(HardwayBets[H]));
+                    break;
+                case 10:
+                    betting.ChangeButtonImage(betting.GetButton("Double5"),  betting.GetChipNumFromValue(HardwayBets[H]));
+                    break;
+                default:
+                    break;
+            }
+        }
+        foreach(int O in OneRollBets.Keys)
+        {
+            switch (O)
+            {
+                case -1:
+                    betting.ChangeButtonImage(betting.GetButton("Any"),  betting.GetChipNumFromValue(OneRollBets[O]));
+                    break;
+                case 2:
+                    betting.ChangeButtonImage(betting.GetButton("Double1"),  betting.GetChipNumFromValue(OneRollBets[O]));
+                    break;
+                case 3:
+                    betting.ChangeButtonImage(betting.GetButton("1&2"),  betting.GetChipNumFromValue(OneRollBets[O]));
+                    break;
+                case 7:
+                    betting.ChangeButtonImage(betting.GetButton("7"),  betting.GetChipNumFromValue(OneRollBets[O]));
+                    break;
+                case 11:
+                    betting.ChangeButtonImage(betting.GetButton("5&6"),  betting.GetChipNumFromValue(OneRollBets[O]));
+                    break;
+                case 12:
+                    betting.ChangeButtonImage(betting.GetButton("Double6"),  betting.GetChipNumFromValue(OneRollBets[O]));
+                    break;                
+                default:
+                    break;
+            }
+        }
+        foreach(int P in PointBets.Keys)
+        {
+            switch (P)
+            {
+                case 4:
+                    betting.ChangeButtonImage(betting.GetButton("4"), betting.GetChipNumFromValue(PointBets[P]));
+                    break;
+                case 5:
+                    betting.ChangeButtonImage(betting.GetButton("5"), betting.GetChipNumFromValue(PointBets[P]));
+                    break;
+                case 6:
+                    betting.ChangeButtonImage(betting.GetButton("6"), betting.GetChipNumFromValue(PointBets[P]));
+                    break;
+                case 8:
+                    betting.ChangeButtonImage(betting.GetButton("8"), betting.GetChipNumFromValue(PointBets[P]));
+                    break;
+                case 9:
+                    betting.ChangeButtonImage(betting.GetButton("9"), betting.GetChipNumFromValue(PointBets[P]));
+                    break;
+                case 10:
+                    betting.ChangeButtonImage(betting.GetButton("10"), betting.GetChipNumFromValue(PointBets[P]));
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (FieldAmount > 0)
+        {
+            betting.ChangeButtonImage(betting.GetButton("Field"), betting.GetChipNumFromValue(FieldAmount));
+        }
+        if (PassBet > 0)
+        {
+            betting.ChangeButtonImage(betting.GetButton("PassLine"), betting.GetChipNumFromValue(PassBet));
+        }
+        if (DontPassBet > 0)
+        {
+            betting.ChangeButtonImage(betting.GetButton("Don'tPass"), betting.GetChipNumFromValue(DontPassBet));
+        }
+    }
+
 }
