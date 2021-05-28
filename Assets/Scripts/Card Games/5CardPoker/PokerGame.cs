@@ -170,11 +170,26 @@ public class PokerGame : MonoBehaviour
         payout = winCondition.None;
         bool fullHousePoss = false;
         int numOfPairs = 0;
+        int cSameNum = -1;
+        int cSameSuit = 0;
+        int inOrder = 1;
+        int x = 0;
+        int val = hand[x].value;
+        for (int j = 0; j < hand.Length; j++)
+        {
+            if (hand[j].value == val + 1 || hand[j].value == 1 && val + 1 == 14)
+            {
+                val = hand[j].value;
+                inOrder++;
+                j = 0;
+            }
+            if(inOrder == 5)
+            {
+                j = hand.Length;
+            }
+        }
         for (int i = 0; i < hand.Length - 1; i++)
         {
-            int cSameNum = 1;
-            int cSameSuit = 1;
-            //int inOrder = 1;
             for (int j = 0; j < hand.Length; j++)
             {
                 if(j != i)
@@ -189,11 +204,11 @@ public class PokerGame : MonoBehaviour
                     }
                 }
             }
-            winCondition poss = handleWincondition(cSameNum,cSameSuit,ref fullHousePoss, ref numOfPairs);
+            winCondition poss = handleWincondition(cSameNum,cSameSuit,ref fullHousePoss, ref numOfPairs, inOrder);
             if (poss < payout) payout = poss;
         }
     }
-    public winCondition handleWincondition(int Num, int Suit, ref bool FullHouse, ref int Pairs)
+    public winCondition handleWincondition(int Num, int Suit, ref bool FullHouse, ref int Pairs, int inOrder)
     {
         winCondition condition = winCondition.None;
         if (Num == 2)
@@ -207,9 +222,32 @@ public class PokerGame : MonoBehaviour
             FullHouse = true;
             condition = winCondition.ThreeOfAKind;
         }
-        if (Suit == 5) {condition = winCondition.Flush; }
+        if(inOrder == 5)
+        {
+            condition = winCondition.Straight;
+        }
+        if (Suit == 5) 
+        {
+            int high = 0;
+            foreach (var card in hand)
+            {
+                if (card.value > high) high = card.value;
+            }
+            if (high > 10)
+            {
+                condition = winCondition.RoyalFlush;
+            }
+            else
+            {
+                condition = winCondition.Flush; 
+            }
+        }
         if ((FullHouse && Num == 2)) { condition = winCondition.FullHouse; }
         if (Num == 4) { condition = winCondition.FourOfAKind; }
+        if (condition == winCondition.Straight && Suit == 5) 
+        {
+            condition = winCondition.StraightFlush; 
+        }
         return condition;
     }
     #endregion

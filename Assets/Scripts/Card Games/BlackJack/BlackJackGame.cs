@@ -17,12 +17,12 @@ public class BlackJackGame : MonoBehaviour
     }
     #endregion
     #region Props/feilds
-    int i = 0;
+    //int i = 0;
     public List<Sprite> cardImages;
     public Sprite backOfCard;
     Deck deck = new Deck();
     int bet = 0;
-    winCondition payout = winCondition.None; 
+    winCondition payout = winCondition.None;
 
     //first is dealer 2cd is player.
     Card[] playerHand = new Card[6];
@@ -115,7 +115,10 @@ public class BlackJackGame : MonoBehaviour
             playerButtons[playerCards].gameObject.SetActive(true);
             playerCards++;
 
-            if (GetHandTotal(playerHand) > 21) payout = winCondition.Bust;
+            if (GetHandTotal(playerHand) > 21)
+            {
+                payout = winCondition.Bust;
+            }
             Debug.Log(payout.ToString());
         }
     }
@@ -147,7 +150,7 @@ public class BlackJackGame : MonoBehaviour
         else if (dTotal > pTotal && dTotal <= 21) { payout = winCondition.Loss; }
         else if (dTotal == pTotal) payout = winCondition.None;
     }
-    public void handlePayout()
+    public int handlePayout()
     {
         switch (payout)
         {
@@ -167,6 +170,7 @@ public class BlackJackGame : MonoBehaviour
                 bet *= 4;
                 break;
         }
+        return bet;
     }
     public int GetHandTotal(Card[] hand)
     {
