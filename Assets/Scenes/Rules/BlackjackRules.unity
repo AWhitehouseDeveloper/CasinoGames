@@ -439,5 +439,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 184731462}
+    - target: {fileID: 1312676686886617918, guid: aef1b406a7aa2fc449fff66cf497222e, type: 3}
+      propertyPath: m_text
+      value: "Main Goal: Beat the dealer's hand without going over 21\nDealer hits
+        until their total is 17 or higher.\r\nFace cards are worth 10. Aces are worth
+        1 or 11, whichever makes a better hand.\r\nEach player starts with two cards,
+        the dealer's first card is hidden until the end.\r\nTo 'Hit' gets you another
+        card. To 'Stand' keeps your total and ends your turn.\r\nIf you go over 21
+        you bust, and the dealer wins regardless of the their hand.\r"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aef1b406a7aa2fc449fff66cf497222e, type: 3}
