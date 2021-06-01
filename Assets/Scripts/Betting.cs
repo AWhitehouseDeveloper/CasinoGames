@@ -8,6 +8,7 @@ public class Betting : MonoBehaviour
     public List<Image> chipSprites;
     public List<Image> arrowSprites;
     public GameObject ButtonsContainer;
+    public Sprite UIMask;
 
     private Button[] buttons;
     [Range(1, 9)] private static int selectedChip = 1;
@@ -29,14 +30,17 @@ public class Betting : MonoBehaviour
 
     public void ChangeButtonImage(Button b, int chipNum)
     {
+        Sprite sprite = (chipNum == -1) ? UIMask : chipSprites[chipNum].sprite;
         if (b.name == "Field")
         {
-            b.GetComponentInChildren<Image>().sprite = chipSprites[chipNum].sprite;
-            b.GetComponentInChildren<Image>().type = Image.Type.Simple;
+            Image[] Field = b.GetComponentsInChildren<Image>();
+
+            Field[1].sprite = sprite;
+            Field[1].type = Image.Type.Simple;
         }
         else
         {
-            b.GetComponent<Image>().sprite = chipSprites[chipNum].sprite;
+            b.GetComponent<Image>().sprite = sprite;
             b.GetComponent<Image>().type = Image.Type.Simple;
         }
     }
@@ -82,7 +86,8 @@ public class Betting : MonoBehaviour
         else if (i >= 20) return 3;
         else if (i >= 10) return 2;
         else if (i >= 5) return 1;
-        return 0;
+        else if (i >= 1) return 0;
+        return -1;
     }
 
     private void PositionArrow()

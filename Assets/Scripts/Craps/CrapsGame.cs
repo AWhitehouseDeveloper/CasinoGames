@@ -5,28 +5,7 @@ using UnityEngine.UI;
 
 public class CrapsGame : MonoBehaviour
 {
-    /// <summary>
-    /// Each round has two phases: "come-out" and "point". Dice are passed to the left. 
-    /// To start a round, the shooter makes one or more "come-out" rolls. 
-    /// A come-out roll of 2, 3 or 12 is called "craps" or "crapping out", and anyone betting the Pass line loses. 
-    /// On the other hand, anyone betting the Don't Pass line on come out wins with a roll of 2 or 3 and ties (pushes) if a 12 is rolled. 
-    /// Shooters may keep rolling after crapping out; the dice are only required to be passed if a shooter sevens out (rolls a seven after a point has been established). 
-    /// A come-out roll of 7 or 11 is a "natural"; the Pass line wins and Don't Pass loses. 
-    /// The other possible numbers are the point numbers: 4, 5, 6, 8, 9, and 10. 
-    /// If the shooter rolls one of these numbers on the come-out roll, this establishes the "point" – to "pass" or "win", 
-    /// the point number must be rolled again before a seven.
-
-    /// The dealer flips a button to the "On" side and moves it to the point number signifying the second phase of the round.
-    /// If the shooter "hits" the point value again before rolling a seven, the Pass line wins and a new round starts. 
-    /// If the shooter rolls any seven before repeating the point number (a "seven-out"), 
-    /// the Pass line loses, the Don't Pass line wins, and the dice pass clockwise to the next new shooter for the next round.
-
-    /// Once a point has been established any multi-roll bet(including Pass and/or Don't Pass line bets and odds) 
-    /// are unaffected by the 2, 3, 11 or 12; 
-    /// the only numbers which affect the round are the established point, any specific bet on a number, or any 7. 
-    /// Any single roll bet is always affected (win or lose) by the outcome of any roll.
-    /// 
-    /// </summary>
+    #region Properties
     public Betting betting;
     public GameObject PointIndicator;
     public Sprite IndicatorOn;
@@ -41,6 +20,7 @@ public class CrapsGame : MonoBehaviour
     private Dictionary<int, int> HardwayBets = new Dictionary<int, int>();
     private Dictionary<int, int> PointBets = new Dictionary<int, int>();
     private Dictionary<int, int> OneRollBets = new Dictionary<int, int>();
+    #endregion
 
     #region MainGameFunction(OnRoll, FlipIndicator, and EndRound)
     public void OnRoll()
@@ -86,7 +66,12 @@ public class CrapsGame : MonoBehaviour
         if(FieldAmount > 0) FieldBets(roll);
         Points(roll);
         OneRolls(roll);
-
+        if(roll == 7)
+        {
+            HardwayBets.Clear();
+            OneRollBets.Clear();
+            PointBets.Clear();
+        }
         SetButtonSprites();
         Debug.Log(roll);
         if (EndofRound)
@@ -178,8 +163,6 @@ public class CrapsGame : MonoBehaviour
             int amount = PointBets[roll];
             Utilities.Payout(amount, multiplier);
             PointBets.Remove(roll);
-            //PointBets.Clear();
-            //PlacePointBet(roll, amount);
         }
     }
 
@@ -298,7 +281,7 @@ public class CrapsGame : MonoBehaviour
 
     public void SetButtonSprites()
     {
-        foreach(int H in HardwayBets.Keys)
+        foreach (int H in HardwayBets.Keys)
         {
             switch (H)
             {
@@ -306,45 +289,45 @@ public class CrapsGame : MonoBehaviour
                     betting.ChangeButtonImage(betting.GetButton("Double2"), betting.GetChipNumFromValue(HardwayBets[H]));
                     break;
                 case 6:
-                    betting.ChangeButtonImage(betting.GetButton("Double3"),  betting.GetChipNumFromValue(HardwayBets[H]));
+                    betting.ChangeButtonImage(betting.GetButton("Double3"), betting.GetChipNumFromValue(HardwayBets[H]));
                     break;
                 case 8:
-                    betting.ChangeButtonImage(betting.GetButton("Double4"),  betting.GetChipNumFromValue(HardwayBets[H]));
+                    betting.ChangeButtonImage(betting.GetButton("Double4"), betting.GetChipNumFromValue(HardwayBets[H]));
                     break;
                 case 10:
-                    betting.ChangeButtonImage(betting.GetButton("Double5"),  betting.GetChipNumFromValue(HardwayBets[H]));
+                    betting.ChangeButtonImage(betting.GetButton("Double5"), betting.GetChipNumFromValue(HardwayBets[H]));
                     break;
                 default:
                     break;
             }
         }
-        foreach(int O in OneRollBets.Keys)
+        foreach (int O in OneRollBets.Keys)
         {
             switch (O)
             {
                 case -1:
-                    betting.ChangeButtonImage(betting.GetButton("Any"),  betting.GetChipNumFromValue(OneRollBets[O]));
+                    betting.ChangeButtonImage(betting.GetButton("Any"), betting.GetChipNumFromValue(OneRollBets[O]));
                     break;
                 case 2:
-                    betting.ChangeButtonImage(betting.GetButton("Double1"),  betting.GetChipNumFromValue(OneRollBets[O]));
+                    betting.ChangeButtonImage(betting.GetButton("Double1"), betting.GetChipNumFromValue(OneRollBets[O]));
                     break;
                 case 3:
-                    betting.ChangeButtonImage(betting.GetButton("1&2"),  betting.GetChipNumFromValue(OneRollBets[O]));
+                    betting.ChangeButtonImage(betting.GetButton("1&2"), betting.GetChipNumFromValue(OneRollBets[O]));
                     break;
                 case 7:
-                    betting.ChangeButtonImage(betting.GetButton("7"),  betting.GetChipNumFromValue(OneRollBets[O]));
+                    betting.ChangeButtonImage(betting.GetButton("7"), betting.GetChipNumFromValue(OneRollBets[O]));
                     break;
                 case 11:
-                    betting.ChangeButtonImage(betting.GetButton("5&6"),  betting.GetChipNumFromValue(OneRollBets[O]));
+                    betting.ChangeButtonImage(betting.GetButton("5&6"), betting.GetChipNumFromValue(OneRollBets[O]));
                     break;
                 case 12:
-                    betting.ChangeButtonImage(betting.GetButton("Double6"),  betting.GetChipNumFromValue(OneRollBets[O]));
-                    break;                
+                    betting.ChangeButtonImage(betting.GetButton("Double6"), betting.GetChipNumFromValue(OneRollBets[O]));
+                    break;
                 default:
                     break;
             }
         }
-        foreach(int P in PointBets.Keys)
+        foreach (int P in PointBets.Keys)
         {
             switch (P)
             {
@@ -370,18 +353,9 @@ public class CrapsGame : MonoBehaviour
                     break;
             }
         }
-        if (FieldAmount > 0)
-        {
-            betting.ChangeButtonImage(betting.GetButton("Field"), betting.GetChipNumFromValue(FieldAmount));
-        }
-        if (PassBet > 0)
-        {
-            betting.ChangeButtonImage(betting.GetButton("PassLine"), betting.GetChipNumFromValue(PassBet));
-        }
-        if (DontPassBet > 0)
-        {
-            betting.ChangeButtonImage(betting.GetButton("Don'tPass"), betting.GetChipNumFromValue(DontPassBet));
-        }
+        betting.ChangeButtonImage(betting.GetButton("Field"), betting.GetChipNumFromValue(FieldAmount));
+        betting.ChangeButtonImage(betting.GetButton("PassLine"), betting.GetChipNumFromValue(PassBet));
+        betting.ChangeButtonImage(betting.GetButton("Don'tPass"), betting.GetChipNumFromValue(DontPassBet));
     }
 
 }
